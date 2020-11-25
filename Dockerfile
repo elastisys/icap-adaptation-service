@@ -7,4 +7,6 @@ RUN cd cmd \
 FROM scratch
 COPY --from=builder /go/src/github.com/filetrust/icap-adaptation-service/cmd/adaptation-service /bin/adaptation-service
 
+USER 1001:1001
+
 ENTRYPOINT ["/bin/adaptation-service"]
